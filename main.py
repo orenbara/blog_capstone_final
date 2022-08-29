@@ -87,7 +87,8 @@ class Comment(UserMixin, db.Model):
     blog_post = relationship("BlogPost", back_populates="comments")
     blog_post_id = db.Column(db.Integer, db.ForeignKey("blog_posts.id"))
 
-db.create_all()
+# Run once to create db
+# db.create_all()
 
 
 @app.route('/')
